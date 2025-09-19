@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from employee import views
+from app2 import views as app2_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,7 @@ urlpatterns = [
     path("register",views.EmpRegister.as_view(),name="register"),
     path("update/<int:id>",views.UpdateEmp.as_view(),name="update"),
     path("delete/<int:id>",views.DeleteEmp.as_view(),name="delete"),
+    path("app2/reg",app2_views.EmpRegForm.as_view(),name="empReg"),
     
+
 ]
