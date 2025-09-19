@@ -43,6 +43,7 @@
             <td>{{stud.phone}}</td>
             <td>
                 <a class="btn btn-info" href="{% url 'update' stud.id %}">Update</a>
+                <a class="btn btn-info" href="{% url 'empupdate' stud.id %}">emUpdate</a>
                 <a class="btn btn-danger" href="{% url 'delete' stud.id %}">Delete</a>
             </td>
         </tr>

@@ -26,6 +26,7 @@ urlpatterns = [
     path("update/<int:id>",views.UpdateEmp.as_view(),name="update"),
     path("delete/<int:id>",views.DeleteEmp.as_view(),name="delete"),
     path("app2/reg",app2_views.EmpRegForm.as_view(),name="empReg"),
-    
+    path("app2/update/<int:id>",app2_views.EmpupdateForm.as_view(),name="empupdate"),
+
 
 ]
