@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from employee.models import Employee
 from django.views import View
-from app2.forms import EmployeeForm
+from app2.forms import EmployeeForm,ModelemployeeForm
 from django.http import HttpResponse
 
 # Create your views here.
@@ -40,3 +40,27 @@ class EmpupdateForm(View):
             emp.phone=phone 
             emp.save()
             return redirect("home")
+
+class modelRegForm(View):
+    def get(self,request):
+        form=ModelemployeeForm()
+        return render(request,"emp_reg.html",{"form":form})
+    def post(self,request):
+        form=ModelemployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+        
+class modelUpdateview(View):
+    def get(self,request,**kwargs):
+        emp=Employee.objects.get(id=kwargs.get("id"))
+        form=ModelemployeeForm(instance=emp)
+        return render(request,"emp_reg.html",{"form":form})
+    
+    def post(self,request,**kwargs):
+        emp=Employee.objects.get(id=kwargs.get("id"))
+        form=ModelemployeeForm(request.POST,instance=emp)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    

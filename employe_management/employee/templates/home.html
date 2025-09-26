@@ -41,9 +41,10 @@
             <td>{{stud.designation}}</td>
             <td>{{stud.email}}</td>
             <td>{{stud.phone}}</td>
-            <td>
-                <a class="btn btn-info" href="{% url 'update' stud.id %}">Update</a>
-                <a class="btn btn-info" href="{% url 'empupdate' stud.id %}">emUpdate</a>
+            <td class="">
+                <a class=" btn btn-info" href="{% url 'update' stud.id %}">Update</a>
+                <a class="mt-1 mb-1 btn btn-info" href="{% url 'empupdate' stud.id %}">emUpdate</a>
+                <a class="mt-1 mb-1 btn btn-info" href="{% url 'modup' stud.id%}">ModUpdate</a>
                 <a class="btn btn-danger" href="{% url 'delete' stud.id %}">Delete</a>
             </td>
         </tr>

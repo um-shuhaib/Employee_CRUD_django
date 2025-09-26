@@ -27,6 +27,9 @@ urlpatterns = [
     path("delete/<int:id>",views.DeleteEmp.as_view(),name="delete"),
     path("app2/reg",app2_views.EmpRegForm.as_view(),name="empReg"),
     path("app2/update/<int:id>",app2_views.EmpupdateForm.as_view(),name="empupdate"),
+    path("app2/modreg",app2_views.modelRegForm.as_view(),name="modreg"),
+    path("app2/modup/<int:id>",app2_views.modelUpdateview.as_view(),name="modup"),
+    
 
 
 ]
